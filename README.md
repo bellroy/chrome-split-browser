@@ -3,8 +3,8 @@
 ## What is this?
 
 This repository contains a Chrome Extension that allows you to see and modify the Split experiment
-variants that are running on the current website. This is useful for developers wanted to verify the
-content of split tests.
+variants that are running on the current website. This is useful for developers wanting to verify
+the effect of split tests.
 
 Credit to the inimitable [@everlaat](https://github.com/everlaat) for building the first version of
 this extension.
