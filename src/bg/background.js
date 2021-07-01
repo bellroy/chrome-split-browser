@@ -21,19 +21,22 @@ function onReady (request, sender, callback) {
 }
 
 function onSave (request, sender, callback) {
-  chrome.cookies.set(
-    {
-      url: sender.url,
-      name: request.cookie.name,
-      value: request.cookie.value,
-      path: request.cookie.path,
-      expirationDate: request.cookie.expirationDate,
-      secure: true,
-      sameSite: 'lax',
-      httpOnly: true
-    },
-    callback
-  )
+  function makeCookie (cookieName, cookieValue) {
+    const newCookie = 
+      {
+        url: sender.url,
+        path: request.cookie.path,
+        expirationDate: request.cookie.expirationDate,
+        secure: true,
+        sameSite: 'lax',
+        httpOnly: true
+      }
+      newCookie.name = cookieName;
+      newCookie.value = cookieValue;
+    return newCookie;
+  }
+  chrome.cookies.set(makeCookie(request.cookie.name, request.cookie.value))
+  chrome.cookies.set(makeCookie('setViaChromeSplitExtension','true'), callback)
 }
 
 chrome.extension.onMessage.addListener((request, sender, sendResponse) => {
