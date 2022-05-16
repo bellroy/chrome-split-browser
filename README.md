@@ -29,4 +29,4 @@ enrolled variants.
 
 In the top right of the page you'll see a small box with a number in - the count of active
 experiments. Click the box to change the variant to the one you want to appear to be enrolled in.
-Note that you need to know the variant names in order to switch.
+Note that you need to know the variant names in order to switch, but if you delete your assigned variant and click "Save", you'll be randomly re-assigned (and can keep trying until you find the variant you're looking for).
